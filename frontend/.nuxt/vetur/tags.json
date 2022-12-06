@@ -1,0 +1,14 @@
+{
+  "CategoriesList": {
+    "description": "Auto imported from components/categoriesList.vue"
+  },
+  "DishItem": {
+    "description": "Auto imported from components/dishItem.vue"
+  },
+  "DishList": {
+    "description": "Auto imported from components/dishList.vue"
+  },
+  "HorizontalScroll": {
+    "description": "Auto imported from components/horizontalScroll.vue"
+  }
+}

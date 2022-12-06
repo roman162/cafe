@@ -26,7 +26,8 @@ export class UserService {
         const user = {
             name: Body.name,
             mail: Body.mail,
-            balance: 0
+            balance: 0,
+            role: 'user'
         }
         const newUser = await new this.userModel(user);
         return newUser.save();
