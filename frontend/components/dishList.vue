@@ -3,32 +3,43 @@
     <ul class="categories__list">
       <li
         class="category__item"
-        v-for="(category, index) of dishList"
+        v-for="(category, index) of categories"
         :key="index"
       >
-        <div class="category__title-container">
-          <div class="category__icon-container">
+        <div
+          v-if="(category.dishes.length > 0)"
+          class="category__title-container"
+        >
+          <div
+            v-if="!isAdmin"
+            class="category__icon-container"
+          >
             <img
               :src="category.icon"
               class="category__icon"
             >
           </div>
           <h2 class="category__title">
-            {{ category.name }}
+            {{ category.title }}
           </h2>
         </div>
         <div class="category__container">
           <HorizontalScroll
-            :containerName="'dish__list'"
+            v-if="!isAdmin"
+            :containerName="`dish__list--${category.url}`"
             :isArrow="false"
             @changeItem="pushDish"
           >
-            <ul class="dish__list">
+            <ul
+              v-if="category.dishes.length > 0"
+              class="dish__list"
+              :class="`dish__list--${category.url}`"
+            >
               <li
                 class="dish__item"
                 v-for="(dish, index) of category.dishes"
                 :key="index"
-                :data-index="(category.title + ':' +  index)"
+                :data-index="(category.url + ':' +  index)"
               >
               <DishItem
                 :dish="dish"
@@ -36,6 +47,28 @@
               </li>
             </ul>
           </HorizontalScroll>
+          <div
+            v-else
+            class="dish__list-container"
+          >
+            <ul
+              v-if="category.dishes.length > 0"
+              class="dish__list"
+              :class="`dish__list--${category.url}`"
+            >
+              <li
+                class="dish__item-container"
+                v-for="(dish, index) of category.dishes"
+                :key="index"
+                :data-index="(category.url + ':' +  index)"
+                @click="pushDish(category.url + ':' +  index)"
+              >
+              <DishItem
+                :dish="dish"
+              />
+              </li>
+            </ul>
+          </div>
         </div>
       </li>
     </ul>
@@ -47,38 +80,20 @@ import DishItem from './dishItem.vue';
 import HorizontalScroll from './horizontalScroll.vue';
 
 export default {
-  data() {
-    return {
-      categories: [
-        {
-          title: 'soup',
-          name: 'Первое',
-          icon: '/food/icons/soup.svg'
-        }
-      ]
+  props: {
+    categories: {
+      required: true
+    },
+    isAdmin: {
+      default: false
     }
   },
   components: { DishItem, HorizontalScroll },
-  computed: {
-    dishes () {
-      return this.$store.getters.GET_MENU
-    },
-    dishList () {
-      const categories = this.categories
-      for (const category of categories) {
-        category.dishes = []
-        for (const dish of this.dishes) {
-          if (category.title === dish.category) {
-            category.dishes.push(dish)
-          }
-        }
-      }
-      return categories
-    }
-  },
   methods: {
     pushDish (dish) {
-      this.$emit('pushDish', dish)
+      const str = dish.split(':')
+      const cat = this.categories.find(cat => cat.url === str[0])
+      this.$emit('pushDish', cat.dishes[str[1]])
     }
   }
 }
@@ -88,11 +103,14 @@ export default {
   .categories__list{
     list-style: none;
     padding: 0;
+    height: 100%;
+    overflow: scroll;
   }
 
   .category__title-container{
     display: flex;
     align-items: center;
+    margin-bottom: 24px;
   }
 
   .category__icon-container{
@@ -110,6 +128,10 @@ export default {
     font-weight: 800;
   }
 
+  .category__container{
+    margin-bottom: 48px;
+  }
+
   .category__icon{
     width: 100%;
   }
@@ -120,7 +142,14 @@ export default {
     position: relative;
   }
 
-  .dish__item{
+  .dish__list-container{
+    & .dish__list{
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  .dish__item-container{
     margin-right: 24px;
   }
 </style>

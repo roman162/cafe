@@ -114,13 +114,13 @@
 
 @mixin button{
   font-family: Inter, sans-serif;
-  padding: 10px 20px;
-  background-color: $primary-300;
-  color: $gray-000;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 20px;
+  padding: 20px 24px;
+  background-color: $primary-action;
+  color: #fff;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
   cursor: pointer;
   box-shadow: 0px 1px 1px rgba(80, 87, 228, 0.2);
   transition-property: background-color, box-shadow;
@@ -128,20 +128,7 @@
   transition-timing-function: ease-in;
 
   &:hover{
-    background-color: $primary-200;
-  }
-
-  &:active{
-    background-color: $primary-500;
-  }
-
-  &:disabled{
-    background-color: #CBE1D1;
-    box-shadow: none;
-  }
-
-  &:focus{
-    box-shadow: 0px 0px 0px 3px #B9EDBF;
+    background-color: #273AE4;
   }
 }
 

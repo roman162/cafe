@@ -144,8 +144,8 @@ export default {
           this.watchArrow()
         }
         if (this.listArrWidth === 0 && this.requestKey < 10) {
-          this.requestKey++
-          this.getListWidth()
+          // this.requestKey++
+          // this.getListWidth()
         } else if (this.listArrRight > 0) {
           this.listArr.addEventListener('mousedown', this.downElements)
         }
@@ -193,18 +193,18 @@ export default {
       document.addEventListener('mousemove', this.moveElement)
       document.addEventListener('mouseup', this.removeEvent)
     },
-    upElements () {
+    upElements (event) {
       event.preventDefault()
       if (this.listArrRight <= 0) {
         const index = event.target.closest('li')?.dataset.index
-        if (index || index === 0) {
+        if (index) {
           this.changeActiveItem(index)
         }
       } else {
         const move = this.clientX - event.clientX
         if (move < 5 && move > -5) {
           const index = event.target.closest('li')?.dataset.index
-          if (index || index === 0) {
+          if (index) {
             this.changeActiveItem(index)
           }
         }
@@ -225,8 +225,7 @@ export default {
       document.removeEventListener('mouseup', this.removeEvent)
     },
     changeActiveItem (index) {
-      console.log(index)
-      this.$emit('changeItem', index, event)
+      this.$emit('changeItem', index)
       if (this.isScrolledChanged) {
         setTimeout(() => {
           this.scrolledToActiveItem()
@@ -242,6 +241,7 @@ export default {
     width: auto;
     overflow: hidden;
     position: relative;
+    height: 100%;
 
     &--touch{
       overflow: scroll;

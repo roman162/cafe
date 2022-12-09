@@ -2,17 +2,17 @@
   {
     "name": "admin",
     "path": "/admin",
-    "component": "/home/oem/Документы/code/hakaton/hakaton/frontend2/pages/admin.vue",
+    "component": "/home/oem/Документы/code/hakaton/hakaton/frontend/pages/admin.vue",
     "chunkName": "pages/admin",
     "url": "/admin",
-    "_name": "_7023f64e"
+    "_name": "_0be617b3"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/home/oem/Документы/code/hakaton/hakaton/frontend2/pages/index.vue",
+    "component": "/home/oem/Документы/code/hakaton/hakaton/frontend/pages/index.vue",
     "chunkName": "pages/index",
     "url": "/",
-    "_name": "_d3029e48"
+    "_name": "_4b127894"
   }
 ]

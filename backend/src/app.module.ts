@@ -2,18 +2,16 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
-import { UserModule } from './user/user.module';
-import { DishModule } from './dish/dish.module';
 import { CategoryModule } from './category/category.module';
+import { MenuModule } from './menu/menu.module';
 
 @Module({
   imports: [
     MongooseModule.forRoot('mongodb://localhost/hakaton', {
       useNewUrlParser: true
     }),
-    UserModule,
-    DishModule,
-    CategoryModule
+    CategoryModule,
+    MenuModule
   ],
   controllers: [AppController],
   providers: [AppService],

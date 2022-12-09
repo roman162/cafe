@@ -13,11 +13,11 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_6111ba2c from 'nuxt_plugin_plugin_6111ba2c' // Source: ./components/plugin.js (mode: 'all')
-import nuxt_plugin_cookieuniversalnuxt_d1e0ba2c from 'nuxt_plugin_cookieuniversalnuxt_d1e0ba2c' // Source: ./cookie-universal-nuxt.js (mode: 'all')
-import nuxt_plugin_webfontloader_73e7ab42 from 'nuxt_plugin_webfontloader_73e7ab42' // Source: ./webfontloader.js (mode: 'client')
-import nuxt_plugin_deviceplugin_033dfccd from 'nuxt_plugin_deviceplugin_033dfccd' // Source: ./device.plugin.js (mode: 'all')
-import nuxt_plugin_axios_8a8e717c from 'nuxt_plugin_axios_8a8e717c' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_plugin_7d013b12 from 'nuxt_plugin_plugin_7d013b12' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_cookieuniversalnuxt_3be840d0 from 'nuxt_plugin_cookieuniversalnuxt_3be840d0' // Source: ./cookie-universal-nuxt.js (mode: 'all')
+import nuxt_plugin_webfontloader_d850e1b0 from 'nuxt_plugin_webfontloader_d850e1b0' // Source: ./webfontloader.js (mode: 'client')
+import nuxt_plugin_deviceplugin_232de0b3 from 'nuxt_plugin_deviceplugin_232de0b3' // Source: ./device.plugin.js (mode: 'all')
+import nuxt_plugin_axios_a7341db0 from 'nuxt_plugin_axios_a7341db0' // Source: ./axios.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -85,7 +85,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"Смотреть тв онлайн бесплатно в высоком качестве | Лайм HD TV","htmlAttrs":{"lang":"ru_RU"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"},{"name":"format-detection","content":"telephone=no"},{"property":"og:image","content":"https:\u002F\u002Flimehd.tv\u002Fimg\u002Fpromo.png"},{"property":"twitter:image","content":"https:\u002F\u002Flimehd.tv\u002Fimg\u002Fpromo.png"},{"property":"og:locale","content":"ru_RU"},{"property":"og:site_name","content":"Лайм HD TV - бесплатное ТВ"},{"property":"og:type","content":"video.other"},{"property":"apple-itunes-app","content":"app-id=998832333, app-argument=limehd:\u002F\u002F?token=site"},{"name":"twitter:card","content":"summary"},{"name":"twitter:site","content":"Лайм HD TV - бесплатное тв"},{"itemprop":"name","content":"Лайм HD TV - бесплатное тв"},{"itemprop":"image","content":"https:\u002F\u002Flimehd.tv\u002Fimg\u002Fpromo.png"},{"name":"yandex-verification","content":"130c4cd3c1aff9aa"},{"name":"document-state","content":"dynamic"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"href":"\u002Ffavicon-57x57.png","rel":"apple-touch-icon"},{"href":"\u002Ffavicon-60x60.png","rel":"apple-touch-icon"},{"href":"\u002Ffavicon-72x72.png","rel":"apple-touch-icon"},{"href":"\u002Ffavicon-76x76.png","rel":"apple-touch-icon"},{"href":"\u002Ffavicon-114x114.png","rel":"apple-touch-icon"},{"href":"\u002Ffavicon-120x120.png","rel":"apple-touch-icon"},{"href":"\u002Ffavicon-144x144.png","rel":"apple-touch-icon"},{"href":"\u002Ffavicon-152x152.png","rel":"apple-touch-icon"},{"href":"\u002Ffavicon-180x180.png","rel":"apple-touch-icon"},{"href":"\u002Ffavicon-192x192.png","rel":"icon","type":"image\u002Fpng"},{"href":"\u002Ffavicon-96x96.png","rel":"icon","type":"image\u002Fpng"},{"href":"\u002Ffavicon-32x32.png","rel":"icon","type":"image\u002Fpng"},{"href":"\u002Ffavicon-16x16.png","rel":"icon","type":"image\u002Fpng"},{"rel":"manifest","href":"\u002F_nuxt\u002Fmanifest.69fc2db4.json"}],"style":[],"script":[]},
+    head: {"title":"Кухня Лайм","htmlAttrs":{"lang":"ru_RU"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"},{"name":"format-detection","content":"telephone=no"},{"property":"og:image","content":"https:\u002F\u002Flimehd.tv\u002Fimg\u002Fpromo.png"},{"property":"twitter:image","content":"https:\u002F\u002Flimehd.tv\u002Fimg\u002Fpromo.png"},{"property":"og:locale","content":"ru_RU"},{"property":"og:site_name","content":"Лайм HD TV - бесплатное ТВ"},{"property":"og:type","content":"video.other"},{"property":"apple-itunes-app","content":"app-id=998832333, app-argument=limehd:\u002F\u002F?token=site"},{"name":"twitter:card","content":"summary"},{"name":"twitter:site","content":"Лайм HD TV - бесплатное тв"},{"itemprop":"name","content":"Лайм HD TV - бесплатное тв"},{"itemprop":"image","content":"https:\u002F\u002Flimehd.tv\u002Fimg\u002Fpromo.png"},{"name":"yandex-verification","content":"130c4cd3c1aff9aa"},{"name":"document-state","content":"dynamic"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"href":"\u002Ffavicon-57x57.png","rel":"apple-touch-icon"},{"href":"\u002Ffavicon-60x60.png","rel":"apple-touch-icon"},{"href":"\u002Ffavicon-72x72.png","rel":"apple-touch-icon"},{"href":"\u002Ffavicon-76x76.png","rel":"apple-touch-icon"},{"href":"\u002Ffavicon-114x114.png","rel":"apple-touch-icon"},{"href":"\u002Ffavicon-120x120.png","rel":"apple-touch-icon"},{"href":"\u002Ffavicon-144x144.png","rel":"apple-touch-icon"},{"href":"\u002Ffavicon-152x152.png","rel":"apple-touch-icon"},{"href":"\u002Ffavicon-180x180.png","rel":"apple-touch-icon"},{"href":"\u002Ffavicon-192x192.png","rel":"icon","type":"image\u002Fpng"},{"href":"\u002Ffavicon-96x96.png","rel":"icon","type":"image\u002Fpng"},{"href":"\u002Ffavicon-32x32.png","rel":"icon","type":"image\u002Fpng"},{"href":"\u002Ffavicon-16x16.png","rel":"icon","type":"image\u002Fpng"},{"rel":"manifest","href":"\u002F_nuxt\u002Fmanifest.69fc2db4.json"}],"style":[],"script":[]},
 
     store,
     router,
@@ -214,24 +214,24 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_6111ba2c === 'function') {
-    await nuxt_plugin_plugin_6111ba2c(app.context, inject)
+  if (typeof nuxt_plugin_plugin_7d013b12 === 'function') {
+    await nuxt_plugin_plugin_7d013b12(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_cookieuniversalnuxt_d1e0ba2c === 'function') {
-    await nuxt_plugin_cookieuniversalnuxt_d1e0ba2c(app.context, inject)
+  if (typeof nuxt_plugin_cookieuniversalnuxt_3be840d0 === 'function') {
+    await nuxt_plugin_cookieuniversalnuxt_3be840d0(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_webfontloader_73e7ab42 === 'function') {
-    await nuxt_plugin_webfontloader_73e7ab42(app.context, inject)
+  if (process.client && typeof nuxt_plugin_webfontloader_d850e1b0 === 'function') {
+    await nuxt_plugin_webfontloader_d850e1b0(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_deviceplugin_033dfccd === 'function') {
-    await nuxt_plugin_deviceplugin_033dfccd(app.context, inject)
+  if (typeof nuxt_plugin_deviceplugin_232de0b3 === 'function') {
+    await nuxt_plugin_deviceplugin_232de0b3(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_8a8e717c === 'function') {
-    await nuxt_plugin_axios_8a8e717c(app.context, inject)
+  if (typeof nuxt_plugin_axios_a7341db0 === 'function') {
+    await nuxt_plugin_axios_a7341db0(app.context, inject)
   }
 
   // Lock enablePreview in context

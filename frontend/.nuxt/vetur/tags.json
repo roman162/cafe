@@ -1,6 +1,15 @@
 {
+  "AddDish": {
+    "description": "Auto imported from components/addDish.vue"
+  },
+  "AdminButton": {
+    "description": "Auto imported from components/adminButton.vue"
+  },
   "CategoriesList": {
     "description": "Auto imported from components/categoriesList.vue"
+  },
+  "DayToggle": {
+    "description": "Auto imported from components/dayToggle.vue"
   },
   "DishItem": {
     "description": "Auto imported from components/dishItem.vue"
@@ -10,5 +19,17 @@
   },
   "HorizontalScroll": {
     "description": "Auto imported from components/horizontalScroll.vue"
+  },
+  "ModalWindow": {
+    "description": "Auto imported from components/modalWindow.vue"
+  },
+  "OrderInfo": {
+    "description": "Auto imported from components/orderInfo.vue"
+  },
+  "OrderList": {
+    "description": "Auto imported from components/orderList.vue"
+  },
+  "TrayList": {
+    "description": "Auto imported from components/trayList.vue"
   }
 }

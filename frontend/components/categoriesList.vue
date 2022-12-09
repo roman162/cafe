@@ -41,10 +41,12 @@ export default {
     addCategory () {
       const data = {
         title: this.cat1,
-        url: this.cat2,
-        icon: this.cat3
+        price: this.cat2,
+        weight: this.cat3,
+        image: this.cat4,
+        category: this.cat5
       }
-      this.$axios.post(`http://localhost:3000/categories/category`, data)
+      this.$axios.post(`http://localhost:3000/categories/dish`, data)
         .then((result) => {
           console.log(result.data)
         })

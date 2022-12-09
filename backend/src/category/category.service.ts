@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Dish } from 'src/dish/interfaces/dish.interface';
+import { Dish } from 'src/category/interfaces/dish.interface';
 import { CreateCategoryDTO } from './dto/create-category.dto';
 import { Category } from './interfaces/category.interface';
+import { Menu } from './interfaces/menu.interface';
 
 @Injectable()
 export class CategoryService {
@@ -39,4 +40,17 @@ export class CategoryService {
     const newCategory = await new this.categoryModel(category)
     return newCategory.save()
   }
+
+  async addDish(Body: Dish) {
+    const category = await this.categoryModel
+      .findOne({ url: Body.category})
+      category.dishes.push(Body)
+    return category.save()
+  }
+
+  // async addMenu(Body: Menu) {
+  //   const menu = {...Body}
+  //   const newMenu = await new this.menuModel(menu)
+  //   return newMenu.save()
+  // }
 }

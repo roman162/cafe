@@ -6,7 +6,7 @@ import PurgecssPlugin from 'purgecss-webpack-plugin'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Смотреть тв онлайн бесплатно в высоком качестве | Лайм HD TV',
+    title: 'Кухня Лайм',
     htmlAttrs: {
       lang: 'ru_RU'
     },
@@ -115,81 +115,6 @@ export default {
     workerConcurrency: 500,
     concurrency: 500
   },
-  sitemap: {
-    exclude: [
-      '**/feedback',
-      '**/login',
-      '**/signup',
-      '**/personal-policy',
-      '**/terms-of-use',
-      '**/privacy-policy',
-      '**/recovery',
-      '**/reset-password',
-      '**/epg',
-      '**/channel',
-      '**/profile',
-      '**/app',
-      '**/sitemap',
-      '**/question',
-      '**/confirm-register',
-      '**/congratulations',
-      '**/mobile-redirector',
-      '**/payment-success'
-    ],
-    xmlNs: 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"',
-    hostname: 'https://limehd.tv',
-    path: '/sitemap.xml',
-    gzip: true,
-    cacheTime: 1000 * 60 * 60 * 3,
-    routes: async () => {
-      const axios = require('axios')
-      const routes = []
-      const { data } = await axios.post('https://limehd.tv/api/v4/playlist?limit=1000')
-      for (const channel of data.channels) {
-        routes.push(`/channel/${channel.address}`)
-        routes.push(`/epg/${channel.address}`)
-      }
-      const config = await axios.post('https://limehd.tv/film/config')
-      for (const collection of config.data.data.collections) {
-        if (collection.type === 'collection') {
-          routes.push(`/movies/${collection.pretty_url}`)
-        }
-      }
-      for (const category of config.data.data.categories) {
-        routes.push(`/movies/${category.path}`)
-      }
-      let isFull = false
-      for (const category of config.data.data.categories) {
-        let page = 1
-        isFull = false
-        while (!isFull) {
-          await axios.post(`https://limehd.tv/film/playlist?page=${page}&limit=100&category=${category.id}`)
-            .then((result) => {
-              if (result.data.playlist.length === 0) {
-                isFull = true
-                page = 1
-              } else {
-                page++
-                for (const movie of result.data.playlist) {
-                  routes.push(`/movie/${movie.foreign_id}-${movie.service_id}`)
-                }
-              }
-            })
-        }
-      }
-      // let totalPages
-      // const category = await axios.post('https://limehd.tv/film/playlist?page=1&limit=1')
-      // totalPages = Math.ceil(category.data.total / 500)
-      // for (let page = 1; page <= 5; page++) {
-      //   const category = await axios.post(`https://limehd.tv/film/playlist?page=${page}&limit=500`)
-      //   for (const item of category.data.playlist) {
-      //     routes.push(`/movie/${item.foreign_id}-${item.service_id}`)
-      //   }
-      // }
-      return routes
-    }
-  },
-
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   webfontloader: {
     events: false,

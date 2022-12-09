@@ -1,5 +1,5 @@
-import { Document, Types } from 'mongoose'
-import { Dish } from 'src/dish/interfaces/dish.interface'
+import { Document } from 'mongoose'
+import { Dish } from 'src/category/interfaces/dish.interface'
 
 export interface Category extends Document {
   readonly title: string,
